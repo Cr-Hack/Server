@@ -1,0 +1,3 @@
+[submodule "WebServerAPI"]
+	path = WebServerAPI
+	url = https://github.com/Cr-Hack/WebServerAPI
