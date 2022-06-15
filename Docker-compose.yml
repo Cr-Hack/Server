@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    container_name: crhackserver
+    restart: always
+    image: crhack:serverv0.1
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test_pass' # TODO: Change this
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'pass'
+    volumes:
+      - mysql-data-crhack:/var/lib/mysql
+volumes:
+  mysql-data-crhack:
