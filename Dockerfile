@@ -12,9 +12,11 @@ ENV NODE_ENV=production
 
 WORKDIR /usr/src/crhack/WebServerAPI
 
+RUN npm i
+
 # SQL data is now from the docker-compose file.
 #VOLUME [ "/data/crhack" ]
 
-EXPOSE 80
+EXPOSE 5000
 
 CMD [ "node", "server.js" ]
