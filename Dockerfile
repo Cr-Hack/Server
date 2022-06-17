@@ -1,4 +1,4 @@
-FROM mysql:debian
+FROM debian:stable-slim
 
 COPY . /usr/src/crhack
 
