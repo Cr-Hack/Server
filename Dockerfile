@@ -14,9 +14,6 @@ WORKDIR /usr/src/crhack/WebServerAPI
 
 RUN npm i
 
-# SQL data is now from the docker-compose file.
-#VOLUME [ "/data/crhack" ]
-
 EXPOSE 5000
 
 CMD [ "node", "server.js" ]
