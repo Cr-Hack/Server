@@ -10,13 +10,14 @@ services:
     container_name: crhackdb
     restart: always
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_DATABASE: 'crhack'
-      MYSQL_ROOT_PASSWORD: 'root' # TODO: Change this
-      MYSQL_USER: 'crhack'
-      MYSQL_PASS: 'crhackpass'
+      MYSQL_ROOT_PASSWORD: '6rc/XaB*aqCd-V-b+@U~Q=xc^pyzXf'
+    cap_add:
+      - SYS_NICE
     volumes:
       - mysql-data-crhack:/var/lib/mysql
+    ports:
+      - '3500:3306'
 volumes:
   mysql-data-crhack:
