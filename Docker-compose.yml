@@ -6,6 +6,8 @@ services:
     image: crhack:serverv0.1
     ports:
       - "5000:5000"
+    volumes:
+      - crhack-files:/var/node/files/
   mysql:
     container_name: crhackdb
     restart: always
@@ -22,3 +24,4 @@ services:
       - '3500:3306'
 volumes:
   mysql-data-crhack:
+  crhack-files:
