@@ -1,0 +1,27 @@
+version: '2'
+services:
+  server:
+    container_name: crhackserver
+    restart: always
+    image: crhack:serverv0.1
+    ports:
+      - "5000:5000"
+    volumes:
+      - crhack-files:/var/node/files/
+  mysql:
+    container_name: crhackdb
+    restart: always
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: 'crhack'
+      MYSQL_ROOT_PASSWORD: '6rc/XaB*aqCd-V-b+@U~Q=xc^pyzXf'
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - mysql-data-crhack:/var/lib/mysql
+    ports:
+      - '3500:3306'
+volumes:
+  mysql-data-crhack:
+  crhack-files:
